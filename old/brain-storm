@@ -1,0 +1,22 @@
+1. Все будет в виде большого календаря. 
+2. Будут разные типы календарей: общий, время, деньги, другие ресурсы
+Будут странички
+  - Home - сам календарь
+  - просто список трат
+  - статистика
+  
+У меня будут компоненты
+calendar
+  calendar-head
+    calendar-scroll-bar
+    calendar-scale-bar
+  calendar-body
+
+/products/calendar?start=""&end=""&view="month"
+/products/calendar?start=""&end=""&view="week"
+/products/calendar?start=""&end=""&view="agenda"
+
+/calendar/year/2022/month/2
+/calendar/year/2022/month/2/agenda
+/calendar/year/2022/month/2/week/3
+/calendar/year/2022/month/2/week/3x/agenda

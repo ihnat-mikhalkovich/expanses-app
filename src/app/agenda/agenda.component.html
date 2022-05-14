@@ -1,0 +1,80 @@
+<div class="calendar">
+  <div class="calendar-head">
+    <app-scroll-bar (todayEvent)="onTodayEvent()"
+                    (backEvent)="onBackEvent()"
+                    (nextEvent)="onNextEvent()"></app-scroll-bar>
+    <!-- <div class="calendar-date-period">{{dayItem.date | date:'MMM dd'}}</div> -->
+    <app-scale-bar [monthUrl]="getMonthUrl()"
+                    [weekUrl]="getWeekUrl()"
+                    [dayUrl]="dayUrl"></app-scale-bar>
+  </div>
+  <div class="calendar-body">
+    
+    <div class="calendar-agenda-item">
+      <div class="calendar-agenda-date">20.05.2022</div>
+      <div class="calendar-day">
+        <div class="calendar-day-item">Картошка</div>
+        <div class="calendar-day-item">Помидор</div>
+        <div class="calendar-day-item">Корм для кошек</div>
+        <div class="calendar-day-item">Корм для кошек</div>
+        <div class="calendar-day-item">Корм для кошек</div>
+        <div class="calendar-day-item">Парашёк</div>
+      </div>
+    </div>
+    <div class="calendar-agenda-item">
+      <div class="calendar-agenda-date">21.05.2022</div>
+      <div class="calendar-day">
+        <div class="calendar-day-item">Картошка</div>
+        <div class="calendar-day-item">Помидор</div>
+        <div class="calendar-day-item">Корм для кошек</div>
+        <div class="calendar-day-item">Парашёк</div>
+      </div>
+    </div>
+    <div class="calendar-agenda-item">
+      <div class="calendar-agenda-date">22.05.2022</div>
+      <div class="calendar-day">
+        <div class="calendar-day-item">Картошка</div>
+        <div class="calendar-day-item">Помидор</div>
+        <div class="calendar-day-item">Корм для кошек</div>
+        <div class="calendar-day-item">Парашёк</div>
+      </div>
+    </div>
+    <div class="calendar-agenda-item">
+      <div class="calendar-agenda-date">23.05.2022</div>
+      <div class="calendar-day">
+        <div class="calendar-day-item">Картошка</div>
+        <div class="calendar-day-item">Помидор</div>
+        <div class="calendar-day-item">Корм для кошек</div>
+        <div class="calendar-day-item">Парашёк</div>
+      </div>
+    </div>
+    <div class="calendar-agenda-item">
+      <div class="calendar-agenda-date">24.05.2022</div>
+      <div class="calendar-day">
+        <div class="calendar-day-item">Картошка</div>
+        <div class="calendar-day-item">Помидор</div>
+        <div class="calendar-day-item">Корм для кошек</div>
+        <div class="calendar-day-item">Парашёк</div>
+      </div>
+    </div>
+    <div class="calendar-agenda-item">
+      <div class="calendar-agenda-date">25.05.2022</div>
+      <div class="calendar-day">
+        <div class="calendar-day-item">Картошка</div>
+        <div class="calendar-day-item">Помидор</div>
+        <div class="calendar-day-item">Корм для кошек</div>
+        <div class="calendar-day-item">Парашёк</div>
+      </div>
+    </div>
+    <div class="calendar-agenda-item">
+      <div class="calendar-agenda-date">26.05.2022</div>
+      <div class="calendar-day">
+        <div class="calendar-day-item">Картошка</div>
+        <div class="calendar-day-item">Помидор</div>
+        <div class="calendar-day-item">Корм для кошек</div>
+        <div class="calendar-day-item">Парашёк</div>
+      </div>
+    </div>
+
+  </div>
+</div>

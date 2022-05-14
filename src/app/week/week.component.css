@@ -1,0 +1,86 @@
+.calendar {
+  margin: 0 auto;
+  width: 90%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.calendar-body {
+  height: 90%;
+  display: grid;
+  grid-template: 1fr 20fr 1fr / repeat(7, 1fr);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin: -1px;
+}
+
+.calendar-day {
+  text-align: end;
+  padding: 3px;
+  outline: 1px solid white;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.calendar-day-of-week {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-date-period {
+  padding-top: 5px; 
+  font-size: large;
+}
+
+.calendar-day:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.calendar-day-item {
+  text-align: center;
+  width: 100% + 3px;
+  outline: 1px solid white;
+  cursor: pointer;
+  margin: 1px;
+}
+
+.calendar-day-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.not-current-month {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.hide {
+  display: none;
+}
+
+.last-item {
+  width: fit-content;
+  padding-left: 5px;
+  padding-right: 5px;
+  align-self: center;
+  background-color: rgba(255, 166, 0, 0.3);
+  pointer-events: none;
+}
+
+.today {
+  background-color: rgba(255, 166, 0, 0.3);
+}
+
+.calendar-head {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.calendar-date-period {
+  padding-top: 5px; 
+  font-size: large;
+}

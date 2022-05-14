@@ -1,0 +1,19 @@
+<div class="calendar">
+  <div class="calendar-head">
+    <app-scroll-bar (todayEvent)="onTodayEvent()"
+                    (backEvent)="onBackEvent()"
+                    (nextEvent)="onNextEvent()"></app-scroll-bar>
+    <div class="calendar-date-period">{{days[0].date | date:'MMM dd'}} - {{days[6].date | date:'MMM dd'}}</div>
+    <app-scale-bar [dayUrl]="getDayUrl()"
+                    [monthUrl]="getMonthUrl()"
+                    [weekUrl]="weekUrl"></app-scale-bar>
+  </div>
+  <div class="calendar-body">
+    <div *ngFor="let day of weekDays" class="calendar-day-of-week">{{day}}</div>
+    <div *ngFor="let day of days" class="calendar-day" [class.not-current-month]="day.date.getMonth() != days[6].date.getMonth()" [class.today]="isCurrentDate(day.date)" [routerLink]="getDateUrl(day.date)">
+      {{day.date | date:'dd'}}
+      <div *ngFor="let product of day.products; let i = index" class="calendar-day-item" [class.hide]="shouldHide(i, day.products.length)">{{product.name}}</div>
+      <div *ngIf="day.products.length > maxItemsAmount + 1" class="calendar-day-item last-item">{{day.products.length - maxItemsAmount}} more</div>
+    </div>
+  </div>
+</div>

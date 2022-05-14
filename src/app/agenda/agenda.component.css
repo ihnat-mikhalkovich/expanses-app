@@ -1,0 +1,82 @@
+.calendar {
+  margin: 0 auto;
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.calendar-body {
+  height: 90%;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: -1px;
+  flex-wrap: wrap;
+  margin-bottom: 5vh;
+}
+
+.calendar-day {
+  padding: 3px;
+  outline: 1px solid white;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.calendar-date-period {
+  padding-top: 5px; 
+  font-size: large;
+}
+
+.calendar-agenda-item {
+  display: flex;
+  width: 100%;
+}
+
+.calendar-agenda-date {
+  display: flex;
+  width: 20%;
+  padding: 5px;
+  outline: 1px solid white;
+  cursor: pointer;
+  margin: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-agenda-date:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.calendar-day-item {
+  text-align: center;
+  width: 100% + 3px;
+  /* outline: 1px solid white; */
+  cursor: pointer;
+  margin: 1px;
+}
+
+.calendar-day-item:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.today {
+  background-color: rgba(255, 166, 0, 0.3);
+}
+
+.calendar-head {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 1.25vh 0 3vh 0
+}
+
+.calendar-date-period {
+  padding-top: 5px; 
+  font-size: large;
+}

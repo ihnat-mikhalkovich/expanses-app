@@ -1,0 +1,16 @@
+<div class="calendar">
+  <div class="calendar-head">
+    <app-scroll-bar (todayEvent)="onTodayEvent()"
+                    (backEvent)="onBackEvent()"
+                    (nextEvent)="onNextEvent()"></app-scroll-bar>
+    <div class="calendar-date-period">{{dayItem.date | date:'MMM d'}}</div>
+    <app-scale-bar [monthUrl]="getMonthUrl()"
+                    [weekUrl]="getWeekUrl()"
+                    [dayUrl]="dayUrl"></app-scale-bar>
+  </div>
+  <div class="calendar-body">
+    <div class="calendar-day" [class.today]="isCurrentDate(dayItem.date)">
+      <div *ngFor="let product of dayItem.products" class="calendar-day-item">{{product.name}}</div>
+    </div>
+  </div>
+</div>
