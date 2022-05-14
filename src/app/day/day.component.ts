@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { addDays, startOfWeek, addWeeks, isSameDay, getDay, getDate, getWeekOfMonth } from 'date-fns';
 import { Day } from '../Day';
 import { DayService } from '../day.service';
+import { ScrollBarListenerService } from '../scroll-bar-state.service';
 
 @Component({
   selector: 'app-day',
@@ -24,8 +25,17 @@ export class DayComponent implements OnInit {
   constructor(
     private dayService: DayService,
     private activatedRoute: ActivatedRoute,
-    private location: Location
-  ) { }
+    private location: Location,
+    private scrollBarStateService: ScrollBarListenerService
+  ) {
+
+    this.scrollBarStateService
+      .subscribeOnScrollBar(
+        () => this.onTodayEvent(), 
+        () => this.onBackEvent(), 
+        () => this.onNextEvent()
+      );
+  }
 
   ngOnInit(): void {
     let paramMap = this.activatedRoute.snapshot.paramMap;

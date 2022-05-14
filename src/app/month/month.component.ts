@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { endOfMonth, endOfWeek, startOfWeek, addWeeks, isSameDay, getDate } from 'date-fns';
 import { Day } from '../Day';
 import { DayService } from '../day.service';
+import { ScrollBarListenerService } from '../scroll-bar-state.service';
 
 @Component({
   selector: 'app-month',
@@ -32,8 +33,17 @@ export class MonthComponent implements OnInit {
   constructor(
     private dayService: DayService,
     private activatedRoute: ActivatedRoute,
-    private location: Location
-  ) { }
+    private location: Location,
+    private scrollBarStateService: ScrollBarListenerService
+  ) {
+
+    this.scrollBarStateService
+      .subscribeOnScrollBar(
+        () => this.onTodayEvent(), 
+        () => this.onBackEvent(), 
+        () => this.onNextEvent()
+      );
+  }
 
   ngOnInit(): void {
     this.year = Number(this.activatedRoute.snapshot.paramMap.get('year'));
@@ -64,7 +74,9 @@ export class MonthComponent implements OnInit {
   }
 
   getDateUrl(date: Date): string {
-    return `/calendar/year/${date.getFullYear()}/month/${date.getMonth() + 1}/day/${getDate(date)}`;
+    const url = `/calendar/year/${date.getFullYear()}/month/${date.getMonth() + 1}/day/${getDate(date)}`;
+    console.log("result: " + url);
+    return url;
   }
 
   getDayUrl(): string {

@@ -1,8 +1,6 @@
 <div class="calendar">
   <div class="calendar-head">
-    <app-scroll-bar (todayEvent)="onTodayEvent()"
-                    (backEvent)="onBackEvent()"
-                    (nextEvent)="onNextEvent()"></app-scroll-bar>
+    <app-scroll-bar></app-scroll-bar>
     <div class="calendar-date-period">{{dayItem.date | date:'MMM d'}}</div>
     <app-scale-bar [monthUrl]="getMonthUrl()"
                     [weekUrl]="getWeekUrl()"
